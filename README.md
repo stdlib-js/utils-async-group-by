@@ -18,6 +18,17 @@ limitations under the License.
 
 -->
 
+
+<details>
+  <summary>
+    About stdlib...
+  </summary>
+  <p>We believe in a future in which the web is a preferred environment for numerical computation. To help realize this future, we've built stdlib. stdlib is a standard library, with an emphasis on numerical and scientific computation, written in JavaScript (and C) for execution in browsers and in Node.js.</p>
+  <p>The library is fully decomposable, being architected in such a way that you can swap out and mix and match APIs and functionality to cater to your exact preferences and use cases.</p>
+  <p>When you use stdlib, you can be absolutely certain that you are using the most thorough, rigorous, well-written, studied, documented, tested, measured, and high-quality code out there.</p>
+  <p>To join us in bringing numerical computing to the web, get started by checking us out on <a href="https://github.com/stdlib-js/stdlib">GitHub</a>, and please consider <a href="https://opencollective.com/stdlib">financially supporting stdlib</a>. We greatly appreciate your continued support!</p>
+</details>
+
 # groupByAsync
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
@@ -93,10 +104,10 @@ groupByAsync( arr, indicator, done );
 
 The function accepts the following `options`:
 
--   `limit`: the maximum number of pending invocations at any one time. Default: `infinity`.
--   `series`: `boolean` indicating whether to sequentially invoke the `indicator` function for each `collection` element. If `true`, the function sets `options.limit=1`. Default: `false`.
--   `returns`: specifies the output format. If the option equals `'values'`, the function returns group results as element values. If the option equals `'indices'`, the function returns group results as element indices. If the option equals `'*'`, the function returns group results as both element indices and values. Default: `'values'`.
--   `thisArg`: the execution context for `indicator`.
+-   **limit**: the maximum number of pending invocations at any one time. Default: `infinity`.
+-   **series**: boolean indicating whether to sequentially invoke the `indicator` function for each `collection` element. If `true`, the function sets `options.limit=1`. Default: `false`.
+-   **returns**: specifies the output format. If the option equals `'values'`, the function returns group results as element values. If the option equals `'indices'`, the function returns group results as element indices. If the option equals `'*'`, the function returns group results as both element indices and values. Default: `'values'`.
+-   **thisArg**: the execution context for `indicator`.
 
 By default, the function returns group results as element values. To return element indices, set the `returns` option to `'indices'`.
 
@@ -265,10 +276,10 @@ function done( error, result ) {
 
 When invoked, the `indicator` function is provided a maximum of four arguments:
 
--   `value`: collection value.
--   `index`: collection index.
--   `collection`: the input `collection`.
--   `next`: a callback which should be called once the `indicator` function has finished processing a collection `value`.
+-   **value**: collection value.
+-   **index**: collection index.
+-   **collection**: the input `collection`.
+-   **next**: a callback which should be called once the `indicator` function has finished processing a collection `value`.
 
 The actual number of provided arguments depends on function `length`. If the `indicator` function accepts two arguments, the `indicator` function is provided `value` and `next`. If the `indicator` function accepts three arguments, the `indicator` function is provided `value`, `index`, and `next`. For every other `indicator` function signature, the `indicator` function is provided all four arguments.
 
@@ -305,7 +316,7 @@ groupByAsync( arr, indicator, done );
 
 #### groupByAsync.factory( \[options,] indicator )
 
-Returns a `function` which invokes an `indicator` function once for each element in a `collection`.
+Returns a function which invokes an `indicator` function once for each element in a `collection`.
 
 ```javascript
 function indicator( value, next ) {
@@ -399,7 +410,7 @@ The function accepts the same `options` as `groupByAsync()`.
     */
     ```
 
-    while each group identifier is unique, all collection elements resolve to the same group because each group identifier serializes to the same `string`.
+    while each group identifier is unique, all collection elements resolve to the same group because each group identifier serializes to the same string.
 
 </section>
 
